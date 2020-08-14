@@ -19,7 +19,7 @@ import Game5 from "./Components/Projects/Game5/Game5";
 
 function App() {
   return (
-    <Router>
+    <Router basename="react-deploy">
       <div className="App">
         <Switch>
           <Route path="/" exact component={Home} />
