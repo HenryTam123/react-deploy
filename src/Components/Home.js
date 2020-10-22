@@ -71,9 +71,9 @@ const Home = () => {
         <div className="description">
           <h2>Combination of Skills</h2>
           <br />
-          <p>- 2 years of web development experience</p>
+          <p>- 3 months of web development experience</p>
           <br />
-          <p>- 1 year of back-end project experience</p>
+          <p>- 3 months of project experience</p>
         </div>
         <div className="box">
           <h2>Web Development</h2>

@@ -1,38 +1,23 @@
 import React, { useState, useEffect } from "react";
 
 const Game5 = () => {
-  const numBox = 0;
-  var position = 0;
-  var isPlaying = true;
+  const [position, setPosition] = useState(["", ""]);
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      if (isPlaying === true) {
-        if (position < window.innerHeight - 80) {
-          position = position + 1;
-        }
-        const bullet = document.querySelector(".game-ball");
-        bullet.style.top = `${position}px`;
-        bullet.style.left = `${position}px`;
-      }
-    }, 10);
-    return () => clearInterval(interval);
-  }, []);
-
-  useEffect(() => {
-    const gridContainer = document.getElementsByClassName("grid-container")[0];
-    for (let i = 0; i < 60; i++) {
-      const grid = document.createElement("div");
-      grid.classList.add("grid");
-      gridContainer.appendChild(grid);
-    }
-  });
+  const handleChange = (e) => {
+    setPosition([e.clientX, e.clientY]);
+  };
 
   return (
-    <div className="game5-page">
-      <section className="grid-container"></section>
-      <div className="game-ball"></div>
-      <div className="moving-bar"></div>
+    <div className="game5-page" onMouseMove={handleChange}>
+      <div className="game5-background"></div>
+      <div className="game5-intro">
+        <h2 className="game5-h2">Welcome to Tam's mini game 5</h2>
+        <button className="game5-button">Start</button>
+      </div>
+      <div
+        className="game5-circle"
+        style={{ top: position[1] - 80 + "px", left: position[0] - 80 + "px" }}
+      ></div>
     </div>
   );
 };

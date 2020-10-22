@@ -28,7 +28,7 @@ const Piano = () => {
     if (e.repeat) return;
     const keyIndex = whiteKeyboard.indexOf(key);
     const pressedKey = whiteKeys[keyIndex];
-    const keySound = new Audio(`/${pressedKey}.mp3`);
+    const keySound = new Audio(process.env.PUBLIC_URL + `/${pressedKey}.mp3`);
     keySound.play();
   };
 
@@ -36,7 +36,7 @@ const Piano = () => {
     if (e.repeat) return;
     const keyIndex = blackKeyboard.indexOf(key);
     const pressedKey = blackKeys[keyIndex];
-    const keySound = new Audio(`/${pressedKey}.mp3`);
+    const keySound = new Audio(process.env.PUBLIC_URL + `/${pressedKey}.mp3`);
     keySound.play();
   };
 
@@ -82,15 +82,21 @@ const Piano = () => {
       <div className="piano">
         {whiteKeys.map((key) => (
           <button className={`white-keys ${key}-key`} onClick={playSound}>
-            <audio className={`sounds ${key}`} src={`/${key}.mp3`}>
-              <source src={`/${key}.mp3`} />
+            <audio
+              className={`sounds ${key}`}
+              src={process.env.PUBLIC_URL + `/${key}.mp3`}
+            >
+              <source src={process.env.PUBLIC_URL + `/${key}.mp3`} />
             </audio>
           </button>
         ))}
         {blackKeys.map((key) => (
           <button className={`black-keys ${key}-key`} onClick={playSound}>
-            <audio className="sounds" src={`/${key}.mp3`}>
-              <source src={`/${key}.mp3`} />
+            <audio
+              className="sounds"
+              src={process.env.PUBLIC_URL + `/${key}.mp3`}
+            >
+              <source src={process.env.PUBLIC_URL + `/${key}.mp3`} />
             </audio>
           </button>
         ))}

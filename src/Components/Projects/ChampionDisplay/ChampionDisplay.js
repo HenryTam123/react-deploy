@@ -16,7 +16,7 @@ const ChampionDisplay = () => {
   useEffect(() => {
     const getChampions = async () => {
       const response = await fetch(
-        "http://ddragon.leagueoflegends.com/cdn/10.15.1/data/en_US/champion.json"
+        "https://ddragon.leagueoflegends.com/cdn/10.15.1/data/en_US/champion.json"
       );
       const data = await response.json();
       setChampions(data.data);
@@ -42,10 +42,10 @@ const ChampionDisplay = () => {
           <ChampionCard
             id={champion[0].id}
             title={champion[0].title}
-            image={`http://ddragon.leagueoflegends.com/cdn/img/champion/loading/${champion[0].id}_0.jpg`}
+            image={`https://ddragon.leagueoflegends.com/cdn/img/champion/loading/${champion[0].id}_0.jpg`}
             tags={champion[0].tags}
             blurb={champion[0].blurb}
-            fullImage={`http://ddragon.leagueoflegends.com/cdn/img/champion/splash/${champion[0].id}_0.jpg`}
+            fullImage={`https://ddragon.leagueoflegends.com/cdn/img/champion/splash/${champion[0].id}_0.jpg`}
             index={championList.indexOf(champion)}
           />
         ))}

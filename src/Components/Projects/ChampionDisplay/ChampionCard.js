@@ -32,8 +32,8 @@ const ChampionCard = ({ id, title, image, tags, blurb, fullImage, index }) => {
     } else {
       setCurrent((current) => current - 1);
     }
-    orginalImage.src = `http://ddragon.leagueoflegends.com/cdn/img/champion/loading/${id}_${current}.jpg`;
-    orginalImage2.src = `http://ddragon.leagueoflegends.com/cdn/img/champion/splash/${id}_${current}.jpg`;
+    orginalImage.src = `https://ddragon.leagueoflegends.com/cdn/img/champion/loading/${id}_${current}.jpg`;
+    orginalImage2.src = `https://ddragon.leagueoflegends.com/cdn/img/champion/splash/${id}_${current}.jpg`;
   };
   console.log(image);
   return (

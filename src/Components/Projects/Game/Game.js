@@ -112,7 +112,7 @@ const Game = () => {
   }, [isPlaying]);
 
   const playMusic = (e) => {
-    const bgm = new Audio("/GameBackgroundMusic.mp3");
+    const bgm = new Audio(process.env.PUBLIC_URL + "/GameBackgroundMusic.mp3");
     if (e.target.classList[0] === "back-button") {
       bgm.pause();
     } else {
@@ -130,7 +130,11 @@ const Game = () => {
 
   return (
     <div className="game-page" onMouseMove={handleChange}>
-      <audio src="/GameBackgroundMusic.mp3" autoPlay loop />
+      <audio
+        src={process.env.PUBLIC_URL + "/GameBackgroundMusic.mp3"}
+        autoPlay
+        loop
+      />
       <Link to="/project">
         <button
           className="back-button"
