@@ -73,7 +73,7 @@ const Home = () => {
           <br />
           <p>- 3 months of web development experience</p>
           <br />
-          <p>- 3 months of project experience</p>
+          <p>- 2 months of project experience</p>
         </div>
         <div className="box">
           <h2>Web Development</h2>
